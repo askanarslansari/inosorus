@@ -23,11 +23,13 @@
       animation: slideDown 1s ease-out;
     }
     .animated-text {
-      font-size: 26px;
-      height: 40px;
+      font-size: 28px;
       font-weight: bold;
       color: #38bdf8;
-      animation: fadeIn 2s ease-in;
+      margin-bottom: 30px;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      min-height: 40px;
     }
     p {
       font-size: 20px;
@@ -59,7 +61,6 @@
       animation: fadeIn 2s ease-in;
     }
 
-    /* Animasyonlar */
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -95,14 +96,18 @@
   </footer>
 
   <script>
-    const texts = ["Yenilik", "Çözüm", "Teknoloji", "Güven", "Gelecek"];
+    const texts = ["Yenilik", "Çözüm", "Teknoloji", "Gelecek", "Güven"];
     let index = 0;
-    const element = document.getElementById("changing-text");
+    const el = document.getElementById("changing-text");
 
     setInterval(() => {
-      index = (index + 1) % texts.length;
-      element.textContent = texts[index];
-    }, 2000);
+      el.style.opacity = 0;
+      setTimeout(() => {
+        index = (index + 1) % texts.length;
+        el.textContent = texts[index];
+        el.style.opacity = 1;
+      }, 500);
+    }, 2500);
   </script>
 
 </body>
