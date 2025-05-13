@@ -19,14 +19,10 @@
       animation: fadeIn 1.5s ease-in;
     }
     img.logo {
-      max-width: 200px;
-      margin-bottom: 20px;
+      max-width: 220px;
+      margin: 20px auto 30px;
+      display: block;
       animation: fadeIn 1.2s ease-in;
-    }
-    h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-      animation: slideDown 1s ease-out;
     }
     .animated-text {
       font-size: 24px;
@@ -72,10 +68,6 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
     @keyframes slideUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -86,7 +78,6 @@
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 28px; }
       .animated-text { font-size: 20px; }
       p { font-size: 16px; }
       .button { padding: 12px 20px; font-size: 16px; }
@@ -95,9 +86,10 @@
 </head>
 <body>
 
-  <img src="inosorus.jpg" alt="İnosorus Logo" class="logo">
+  <!-- LOGO -->
+  <img src="inosorus-logo.png" alt="İnosorus Logo" class="logo">
 
-  <h1>İnosorus</h1>
+  <!-- Anlamlı döngüsel kelimeler -->
   <div class="animated-text" id="changing-text">Teknoloji</div>
 
   <p>
@@ -128,3 +120,4 @@
 
 </body>
 </html>
+
