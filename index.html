@@ -4,57 +4,85 @@
   <meta charset="UTF-8">
   <title>İnosorus Teknoloji</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
-      text-align: center;
-      padding: 50px;
+      padding: 0;
+      box-sizing: border-box;
     }
-    header {
-      background-color: #1f2937;
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
       color: white;
-      padding: 30px 0;
+      text-align: center;
+      padding: 50px 20px;
+      animation: fadeIn 1.5s ease-in;
     }
     h1 {
-      font-size: 36px;
-      margin: 0;
+      font-size: 48px;
+      margin-bottom: 20px;
+      animation: slideDown 1s ease-out;
     }
     p {
-      font-size: 18px;
-      color: #333;
-      margin: 20px 0;
+      font-size: 20px;
+      color: #cbd5e1;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      animation: slideUp 1s ease-out;
     }
     .button {
       display: inline-block;
-      padding: 12px 24px;
-      background-color: #2563eb;
-      color: white;
+      padding: 14px 28px;
+      background-color: #38bdf8;
+      color: #0f172a;
       text-decoration: none;
-      border-radius: 6px;
       font-weight: bold;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, background 0.3s ease;
+      animation: fadeInUp 1.2s ease-out;
+    }
+    .button:hover {
+      transform: scale(1.05);
+      background-color: #0ea5e9;
     }
     footer {
-      margin-top: 50px;
-      color: #888;
+      margin-top: 60px;
+      color: #94a3b8;
       font-size: 14px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    /* Animasyonlar */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>İnosorus Teknoloji</h1>
-    <p>Yenilikçi Dijital Çözümler & Akıllı Sistemler</p>
-  </header>
-
-  <p>İnosorus, işletmeniz için modern yazılım, altyapı ve dijital dönüşüm çözümleri sunar.  
-  Teknolojiyle büyümek isteyen herkese özel çözümler üretiyoruz.</p>
+  <h1>İnosorus Teknoloji</h1>
+  <p>
+    İnovasyon, hız ve güvenlik…<br>
+    İnosorus Teknoloji; yazılım, dijital dönüşüm ve otomasyon çözümlerinde size özel çözümler sunar.
+  </p>
 
   <a class="button" href="mailto:info@inosorus.com">Bize Ulaşın</a>
 
   <footer>
-    &copy; 2025 İnosorus Teknoloji A.Ş.
+    &copy; 2025 İnosorus Teknoloji A.Ş. | Tüm hakları saklıdır.
   </footer>
 
 </body>
