@@ -3,6 +3,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>İnosorus Teknoloji</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
     :root {
       --bg-color: #0f172a;
@@ -79,7 +80,7 @@ nav a:hover {
 section {
   padding: 80px 20px;
   text-align: center;
-  animation: fadeIn 1s ease-in;
+  opacity: 0;
 }
 
 @keyframes fadeIn {
@@ -108,6 +109,22 @@ footer {
   color: #94a3b8;
 }
 
+@media (max-width: 600px) {
+  h2 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1em;
+    padding: 0 10px;
+  }
+
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -120,7 +137,7 @@ footer {
     </nav>
   </header>  <section id="hakkimizda">
     <h2>Hakkımızda</h2>
-    <p>İnosorus, yenilikçi teknolojik çözümler geliştiren bir teknoloji firmasıdır. Geleceğin dijital dünyasını inşa ediyoruz.</p>
+    <p>İnosorus, ismini “inovasyon” ve “sormak” kelimelerinden alır. Biz, her şeyin bir soruyla başladığına inanıyoruz. “Daha iyisi mümkün mü?” sorusunu her gün kendimize sorarak, teknolojiyle geleceği yeniden şekillendiriyoruz.<br><br>Amacımız, sadece ürün geliştirmek değil; merakla düşünen, cesurca deneyen ve insan hayatına değer katan çözümler üretmektir.</p>
   </section>  <section id="urunler">
     <h2>Ürünlerimiz</h2>
     <p>Akıllı ev sistemleri, IoT cihazları, yazılım geliştirme ve özel teknoloji projeleri.</p>
@@ -130,6 +147,20 @@ footer {
     <p>Telefon: +90 555 123 4567</p>
   </section>  <footer>
     <p>&copy; 2025 İnosorus Teknoloji. Tüm hakları saklıdır.</p>
-  </footer>
-</body>
+  </footer>  <script>
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeIn 1s ease-in';
+          entry.target.style.opacity = 1;
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      section.style.opacity = 0;
+      observer.observe(section);
+    });
+  </script></body>
 </html>
