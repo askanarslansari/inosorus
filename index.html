@@ -1,122 +1,71 @@
-<!DOCTYPE html>
-<html lang="tr">
+<!DOCTYPE html><html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>İnosorus Teknoloji</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f172a, #1e3a8a);
-      color: white;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #ffffff;
+      padding: 40px 20px;
       text-align: center;
-      padding: 20px;
-      animation: fadeIn 1.5s ease-in;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    img.logo {
-      width: 100%;
-      max-width: 500px;
+    header img {
+      max-width: 200px;
       height: auto;
-      margin: 20px auto 5px; /* ALT BOŞLUK BURADA 5px YAPILDI */
-      display: block;
-      animation: fadeIn 1.2s ease-in;
     }
-    .animated-text {
-      font-size: 28px;
-      font-weight: bold;
-      color: #38bdf8;
-      margin-bottom: 30px;
-      opacity: 1;
-      transition: opacity 0.5s ease;
-      min-height: 30px;
-    }
-    p {
-      font-size: 18px;
-      color: #cbd5e1;
-      max-width: 800px;
-      margin: 40px auto;
-      animation: slideUp 1s ease-out;
-    }
-    .button {
-      display: inline-block;
-      padding: 14px 28px;
-      background-color: #38bdf8;
-      color: #0f172a;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-      transition: transform 0.3s ease, background 0.3s ease;
-      animation: fadeInUp 1.2s ease-out;
+    nav {
       margin-top: 20px;
     }
-    .button:hover {
-      transform: scale(1.05);
-      background-color: #0ea5e9;
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #007acc;
+      font-weight: bold;
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    #hakkimizda, #urunler, #iletisim {
+      max-width: 800px;
+      margin: auto;
     }
     footer {
-      margin-top: 60px;
-      color: #94a3b8;
-      font-size: 14px;
-      animation: fadeIn 2s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @media (max-width: 600px) {
-      .animated-text { font-size: 22px; }
-      p { font-size: 16px; }
-      .button { padding: 12px 20px; font-size: 16px; }
+      background-color: #eee;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-
-  <img src="inosorus-white-xlarge1.png" alt="İnosorus Logo" class="logo">
-
-  <div class="animated-text" id="changing-text">Teknoloji</div>
-
-  <p>
-    İnovasyon, hız ve güvenlik…<br>
-    İnosorus Teknoloji; yazılım, dijital dönüşüm ve otomasyon çözümlerinde size özel çözümler sunar.
-  </p>
-
-  <a class="button" href="mailto:info@inosorus.com">Bize Ulaşın</a>
-
-  <footer>
-    &copy; 2025 İnosorus Teknoloji A.Ş. | Tüm hakları saklıdır | ASKAN ARSLANSARI.
+  <header>
+    <img src="logo.png" alt="İnosorus Teknoloji Logosu">
+    <nav>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#urunler">Ürünler</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </header>  <section id="hakkimizda">
+    <h2>Hakkımızda</h2>
+    <p>İnosorus, yenilikçi teknolojik çözümler geliştiren bir teknoloji firmasıdır. Geleceğin dijital dünyasını inşa ediyoruz.</p>
+  </section>  <section id="urunler">
+    <h2>Ürünlerimiz</h2>
+    <p>Akıllı ev sistemleri, IoT cihazları, yazılım geliştirme ve özel teknoloji projeleri.</p>
+  </section>  <section id="iletisim">
+    <h2>İletişim</h2>
+    <p>E-posta: info@inosorus.com</p>
+    <p>Telefon: +90 555 123 4567</p>
+  </section>  <footer>
+    <p>&copy; 2025 İnosorus Teknoloji. Tüm hakları saklıdır.</p>
   </footer>
-
-  <script>
-    const texts = ["Yenilik", "Çözüm", "Teknoloji", "Gelecek", "Güven"];
-    let index = 0;
-    const el = document.getElementById("changing-text");
-
-    setInterval(() => {
-      el.style.opacity = 0;
-      setTimeout(() => {
-        index = (index + 1) % texts.length;
-        el.textContent = texts[index];
-        el.style.opacity = 1;
-      }, 500);
-    }, 2500);
-  </script>
-
 </body>
 </html>
