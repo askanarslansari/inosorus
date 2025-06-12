@@ -4,46 +4,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>İnosorus Teknoloji</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-      scroll-behavior: smooth;
-    }
-    header {
-      background-color: #ffffff;
-      padding: 40px 20px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    header img {
-      max-width: 200px;
-      height: auto;
-    }
-    nav {
-      margin-top: 20px;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #007acc;
-      font-weight: bold;
-    }
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-    #hakkimizda, #urunler, #iletisim {
-      max-width: 800px;
-      margin: auto;
-    }
-    footer {
-      background-color: #eee;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-    }
+    :root {
+      --bg-color: #0f172a;
+      --text-color: #f1f5f9;
+      --accent-color: #38bdf8;
+    }* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  transition: background-color 0.5s ease;
+}
+
+header {
+  background-color: #1e293b;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  animation: fadeInDown 1s ease;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header img {
+  max-width: 180px;
+  height: auto;
+  animation: zoomIn 1s ease-in-out;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: var(--accent-color);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #7dd3fc;
+}
+
+section {
+  padding: 80px 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+p {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: auto;
+  line-height: 1.6em;
+}
+
+footer {
+  background-color: #1e293b;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  color: #94a3b8;
+}
+
   </style>
 </head>
 <body>
