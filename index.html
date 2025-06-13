@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="tr">
+<!DOCTYPE html>
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,145 +10,177 @@
       --bg-color: #0f172a;
       --text-color: #f1f5f9;
       --accent-color: #38bdf8;
-    }* {
-  box-sizing: border-box;
-}
+    }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  scroll-behavior: smooth;
-  transition: background-color 0.5s ease;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-header {
-  background-color: #1e293b;
-  padding: 40px 20px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  animation: fadeInDown 1s ease;
-}
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+      transition: background-color 0.5s ease;
+      position: relative;
+      overflow-x: hidden;
+    }
 
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+    #animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: radial-gradient(circle, #1e293b 0%, #0f172a 100%);
+      background-size: 400% 400%;
+      animation: bgAnim 15s ease infinite;
+    }
 
-header img {
-  max-width: 180px;
-  height: auto;
-  animation: zoomIn 1s ease-in-out;
-}
+    @keyframes bgAnim {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+    header {
+      background-color: rgba(30, 41, 59, 0.9);
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      animation: fadeInDown 1s ease;
+    }
 
-nav {
-  margin-top: 20px;
-}
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: var(--accent-color);
-  font-weight: bold;
-  transition: color 0.3s;
-}
+    header img {
+      max-width: 180px;
+      height: auto;
+      animation: zoomIn 1s ease-in-out;
+    }
 
-nav a:hover {
-  color: #7dd3fc;
-}
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
 
-section {
-  padding: 80px 20px;
-  text-align: center;
-  opacity: 0;
-}
+    nav {
+      margin-top: 20px;
+    }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: var(--accent-color);
+      font-weight: bold;
+      transition: color 0.3s;
+    }
 
-h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: var(--accent-color);
-}
+    nav a:hover {
+      color: #7dd3fc;
+    }
 
-p {
-  font-size: 1.2em;
-  max-width: 700px;
-  margin: auto;
-  line-height: 1.6em;
-}
+    section {
+      padding: 80px 20px;
+      text-align: center;
+      opacity: 0;
+    }
 
-footer {
-  background-color: #1e293b;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #94a3b8;
-}
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-@media (max-width: 600px) {
-  h2 {
-    font-size: 2em;
-  }
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: var(--accent-color);
+    }
 
-  p {
-    font-size: 1em;
-    padding: 0 10px;
-  }
+    p {
+      font-size: 1.2em;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6em;
+    }
 
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-}
+    footer {
+      background-color: rgba(30, 41, 59, 0.9);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9em;
+      color: #94a3b8;
+    }
 
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 1em;
+        padding: 0 10px;
+      }
+
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+    }
   </style>
 </head>
 <body>
+  <div id="animated-bg"></div>
   <header>
-    <img src="inosorus-white-xlarge.png" alt="İnosorus Teknoloji Logosu">
+    <img src="logo.png" alt="İnosorus Teknoloji Logosu">
     <nav>
       <a href="#hakkimizda">Hakkımızda</a>
       <a href="#urunler">Ürünler</a>
       <a href="#iletisim">İletişim</a>
     </nav>
-  </header>  <section id="hakkimizda">
+  </header>
+
+  <section id="hakkimizda">
     <h2>Hakkımızda</h2>
     <p>İnosorus, ismini “inovasyon” ve “sormak” kelimelerinden alır. Biz, her şeyin bir soruyla başladığına inanıyoruz. “Daha iyisi mümkün mü?” sorusunu her gün kendimize sorarak, teknolojiyle geleceği yeniden şekillendiriyoruz.<br><br>Amacımız, sadece ürün geliştirmek değil; merakla düşünen, cesurca deneyen ve insan hayatına değer katan çözümler üretmektir.</p>
-  </section>  <section id="urunler">
+  </section>
+
+  <section id="urunler">
     <h2>Ürünlerimiz</h2>
     <p>Akıllı ev sistemleri, IoT cihazları, yazılım geliştirme ve özel teknoloji projeleri.</p>
-  </section>  <section id="iletisim">
+  </section>
+
+  <section id="iletisim">
     <h2>İletişim</h2>
     <p>E-posta: info@inosorus.com</p>
     <p>Telefon: +90 555 123 4567</p>
-  </section>  <footer>
+  </section>
+
+  <footer>
     <p>&copy; 2025 İnosorus Teknoloji. Tüm hakları saklıdır.</p>
-  </footer>  <script>
+  </footer>
+
+  <script>
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -162,5 +195,6 @@ footer {
       section.style.opacity = 0;
       observer.observe(section);
     });
-  </script></body>
+  </script>
+</body>
 </html>
