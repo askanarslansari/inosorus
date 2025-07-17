@@ -24,7 +24,7 @@
         
         /* --- Navigasyon Menüsü --- */
         .header {
-            background-color: #222222; /* RENK GÜNCELLENDİ: Koyu Gri */
+            background-color: #222222;
             padding: 1.5rem 4rem;
             display: flex;
             justify-content: space-between;
@@ -120,7 +120,9 @@
 
         .column-right {
             justify-content: center;
-            align-items: flex-start;
+            /* GÜNCELLENDİ: İçeriği yatayda ortalamak için */
+            align-items: center;
+            text-align: center;
         }
 
         .subheading {
@@ -167,7 +169,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: #222222; /* RENK GÜNCELLENDİ: Koyu Gri */
+                background-color: #222222;
                 flex-direction: column;
                 align-items: center;
                 padding: 2rem 0;
@@ -182,7 +184,6 @@
                 display: flex;
             }
 
-            /* Hamburger animasyonu */
             .hamburger.active .line:nth-child(1) {
                 transform: rotate(45deg) translate(5px, 5px);
             }
@@ -202,7 +203,8 @@
                 padding: 2rem;
                 min-height: auto;
             }
-
+            
+            /* Mobil görünümde okunabilirlik için sola yaslı bırakıldı */
             .column-left, .column-right {
                 align-items: flex-start;
                 text-align: left;
@@ -218,7 +220,7 @@
 
     <header class="header">
         <a href="#" class="nav-logo">
-            <img src="images/inosorus-white-xlarg.png" alt="İnosorus Logo">
+            <img src="images/inosorus-white-xlarge.png" alt="İnosorus Logo">
         </a>
         <ul class="nav-links">
             <li><a href="#">Oxi Nedir</a></li>
