@@ -38,16 +38,15 @@
             justify-content: center;
         }
 
-        /* --- Sol Sütun: "Oxi" --- */
+        /* --- Sol Sütun: "Oxi" Logosu --- */
         .column-left {
             align-items: center; /* İçeriği dikey ve yatayda ortalar */
             text-align: center;
         }
 
-        .main-brand {
-            font-size: clamp(8rem, 20vw, 18rem); /* Ekran boyutuna göre esnek font boyutu */
-            font-weight: 400;
-            line-height: 1;
+        .main-brand-logo {
+            max-width: 80%; /* Logo boyutunu ayarlar */
+            height: auto;
         }
 
         /* --- Sağ Sütun: İçerik --- */
@@ -56,11 +55,13 @@
             align-items: flex-start; /* İçeriği sola yaslar */
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            letter-spacing: 1px;
+        .logo-container {
             align-self: flex-start; /* Her zaman en üste ve sola yaslı */
+        }
+
+        .logo-container img {
+            max-height: 3rem; /* Logo yüksekliğini ayarlar */
+            width: auto;
         }
 
         .content {
@@ -113,7 +114,7 @@
             .column-left {
                 min-height: auto;
                 padding-bottom: 0;
-                align-items: flex-start; /* "Oxi" yazısını sola yaslar */
+                align-items: flex-start; /* "Oxi" logosunu sola yaslar */
             }
 
             .column-right {
@@ -121,8 +122,8 @@
                 padding-top: 2rem;
             }
             
-            .logo {
-                font-size: 2rem;
+            .logo-container img {
+                max-height: 2rem;
             }
 
             .main-heading {
@@ -136,11 +137,13 @@
     <main class="container">
         
         <div class="column column-left">
-            <h1 class="main-brand">Oxi</h1>
+            <img src="images/oxi-logo.png" alt="Oxi Logo" class="main-brand-logo">
         </div>
 
         <div class="column column-right">
-            <div class="logo">İNOSORUS</div>
+            <div class="logo-container">
+                <img src="images/inosorus-logo.svg" alt="İnosorus Logo">
+            </div>
             
             <div class="content">
                 <p class="subheading">Geleceği Tasarlayın</p>
