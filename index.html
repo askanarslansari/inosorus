@@ -120,7 +120,6 @@
 
         .column-right {
             justify-content: center;
-            /* GÜNCELLENDİ: İçeriği yatayda ortalamak için */
             align-items: center;
             text-align: center;
         }
@@ -204,10 +203,10 @@
                 min-height: auto;
             }
             
-            /* Mobil görünümde okunabilirlik için sola yaslı bırakıldı */
             .column-left, .column-right {
-                align-items: flex-start;
-                text-align: left;
+                /* GÜNCELLENDİ: Mobil görünümde ortalamak için */
+                align-items: center;
+                text-align: center;
             }
             
             .main-heading {
@@ -220,7 +219,7 @@
 
     <header class="header">
         <a href="#" class="nav-logo">
-            <img src="images/inosorus-white-xlarge.png" alt="İnosorus Logo">
+            <img src="images/inosorus-white-xlarg.png" alt="İnosorus Logo">
         </a>
         <ul class="nav-links">
             <li><a href="#">Oxi Nedir</a></li>
