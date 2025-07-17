@@ -7,8 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* --- Genel Stiller ve Sıfırlama --- */
+        /* Akıcı kaydırma efekti */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Genel Stiller ve Sıfırlama */
         * {
             margin: 0;
             padding: 0;
@@ -22,7 +28,7 @@
             overflow-x: hidden;
         }
         
-        /* --- Navigasyon Menüsü --- */
+        /* Navigasyon Menüsü */
         .header {
             background-color: #222222;
             padding: 1.5rem 4rem;
@@ -91,7 +97,7 @@
             transition: all 0.3s ease-in-out;
         }
 
-        /* --- Ana Kapsayıcı --- */
+        /* Ana Kapsayıcı */
         .container {
             display: flex;
             padding-top: 80px;
@@ -99,7 +105,7 @@
             width: 100%;
         }
 
-        /* --- Sol ve Sağ Sütunlar --- */
+        /* Sol ve Sağ Sütunlar */
         .column {
             flex: 1;
             padding: 4rem;
@@ -108,7 +114,7 @@
             justify-content: center;
         }
 
-        .column-left {
+        .column-left, .column-right {
             align-items: center;
             text-align: center;
         }
@@ -116,12 +122,6 @@
         .main-brand-logo {
             max-width: 80%;
             height: auto;
-        }
-
-        .column-right {
-            justify-content: center;
-            align-items: center;
-            text-align: center;
         }
 
         .subheading {
@@ -156,7 +156,28 @@
             transform: scale(1.05);
         }
 
-        /* --- Mobil ve Tablet İçin Medya Sorguları --- */
+        /* Video Bölümü Stilleri */
+        .video-section {
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            background-color: #000; /* Video yüklenemezse siyah arka plan */
+        }
+
+        .video-section video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+
+        /* Mobil ve Tablet İçin Medya Sorguları */
         @media (max-width: 900px) {
             .header {
                 padding: 1.5rem 2rem;
@@ -183,15 +204,9 @@
                 display: flex;
             }
 
-            .hamburger.active .line:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
-            .hamburger.active .line:nth-child(2) {
-                opacity: 0;
-            }
-            .hamburger.active .line:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
+            .hamburger.active .line:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+            .hamburger.active .line:nth-child(2) { opacity: 0; }
+            .hamburger.active .line:nth-child(3) { transform: rotate(-45deg) translate(7px, -6px); }
 
             .container {
                 flex-direction: column;
@@ -203,18 +218,13 @@
                 min-height: auto;
             }
             
-            .column-left, .column-right {
-                /* GÜNCELLENDİ: Mobil görünümde ortalamak için */
-                align-items: center;
-                text-align: center;
-            }
-            
             .main-heading {
                 font-size: 2.5rem;
             }
         }
     </style>
 </head>
+
 <body>
 
     <header class="header">
@@ -242,17 +252,24 @@
 
         <div class="column column-right">
             <div class="content">
-                <p class="subheading">Geleceğin Teknolojisi</p>
+                <p class="subheading">Geleceği Tasarlayın</p>
                 <h2 class="main-heading">
                     MÜŞTERİLER<br>
                     BİZE NEDEN<br>
                     GÜVENİYOR
                 </h2>
-                <a href="#" class="cta-button">Daha Fazla</a>
+                <a href="#video-bolumu" class="cta-button">Daha Fazla</a>
             </div>
         </div>
 
     </main>
+
+    <section id="video-bolumu" class="video-section">
+        <video autoplay muted loop playsinline>
+            <source src="videos/arka-plan-video.mp4" type="video/mp4">
+            Tarayıcınız video etiketini desteklemiyor.
+        </video>
+    </section>
 
     <script>
         const hamburger = document.querySelector('.hamburger');
