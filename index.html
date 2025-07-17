@@ -3,48 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İnosorus Teknoloji</title>
+    <title>İnosorus - Geleceği Tasarlayın</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* --- Genel Stiller ve Sıfırlama --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <link rel="stylesheet" href="./css/style.css">
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+            overflow-x: hidden; /* Yatay kaydırmayı engelle */
+        }
+
+        /* --- Ana Kapsayıcı --- */
+        .container {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+
+        /* --- Sol ve Sağ Sütunlar --- */
+        .column {
+            flex: 1; /* Sütunların eşit genişlikte olmasını sağlar */
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* --- Sol Sütun: "Oxi" --- */
+        .column-left {
+            align-items: center; /* İçeriği dikey ve yatayda ortalar */
+            text-align: center;
+        }
+
+        .main-brand {
+            font-size: clamp(8rem, 20vw, 18rem); /* Ekran boyutuna göre esnek font boyutu */
+            font-weight: 400;
+            line-height: 1;
+        }
+
+        /* --- Sağ Sütun: İçerik --- */
+        .column-right {
+            justify-content: space-between; /* Logo ve içeriği ayırır */
+            align-items: flex-start; /* İçeriği sola yaslar */
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            align-self: flex-start; /* Her zaman en üste ve sola yaslı */
+        }
+
+        .content {
+            margin-top: 2rem; /* Üstteki logo ile arasına boşluk koyar */
+        }
+
+        .subheading {
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .main-heading {
+            font-size: clamp(2.5rem, 5vw, 4rem); /* Esnek font boyutu */
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #FFFFFF;
+            color: #000000;
+            padding: 1rem 2.5rem;
+            border-radius: 50px; /* Butonu hap şekline getirir */
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05); /* Üzerine gelince hafifçe büyür */
+        }
+
+        /* --- Mobil ve Tablet İçin Medya Sorguları (Responsive Tasarım) --- */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column; /* Sütunları alt alta dizer */
+            }
+
+            .column {
+                padding: 3rem;
+                min-height: 50vh;
+            }
+
+            .column-left {
+                min-height: auto;
+                padding-bottom: 0;
+                align-items: flex-start; /* "Oxi" yazısını sola yaslar */
+            }
+
+            .column-right {
+                justify-content: flex-start; /* İçeriği yukarıdan başlatır */
+                padding-top: 2rem;
+            }
+            
+            .logo {
+                font-size: 2rem;
+            }
+
+            .main-heading {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div id="animated-bg"></div>
-
-    <header>
-        <img src="./images/inosorus-logo.png" alt="İnosorus Teknoloji Logosu">
+    <main class="container">
         
-        <nav>
-            <a href="#hakkimizda">Hakkımızda</a>
-            <a href="#urunler">Ürünler</a>
-            <a href="#iletisim">İletişim</a>
-        </nav>
-    </header>
+        <div class="column column-left">
+            <h1 class="main-brand">Oxi</h1>
+        </div>
 
-    <main>
-        <section id="hakkimizda">
-            <h2>Hakkımızda</h2>
-            <p>İnosorus, ismini “inovasyon” ve “sormak” kelimelerinden alır. Biz, her şeyin bir soruyla başladığına inanıyoruz. “Daha iyisi mümkün mü?” sorusunu her gün kendimize sorarak, teknolojiyle geleceği yeniden şekillendiriyoruz.<br><br>Amacımız, sadece ürün geliştirmek değil; merakla düşünen, cesurca deneyen ve insan hayatına değer katan çözümler üretmektir.</p>
-        </section>
+        <div class="column column-right">
+            <div class="logo">İNOSORUS</div>
+            
+            <div class="content">
+                <p class="subheading">Geleceği Tasarlayın</p>
+                <h2 class="main-heading">
+                    MÜŞTERİLER<br>
+                    BİZE NEDEN<br>
+                    GÜVENİYOR
+                </h2>
+                <a href="#" class="cta-button">Daha Fazla</a>
+            </div>
+            
+            <div></div> 
+        </div>
 
-        <section id="urunler">
-            <h2>Ürünlerimiz</h2>
-            <p>Akıllı ev sistemleri, IoT cihazları, yazılım geliştirme ve özel teknoloji projeleri.</p>
-        </section>
-
-        <section id="iletisim">
-            <h2>İletişim</h2>
-            <p>E-posta: info@inosorus.com</p>
-            <p>Telefon: +90 555 123 4567</p>
-        </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 İnosorus Teknoloji. Tüm hakları saklıdır.</p>
-    </footer>
-
-    <script src="./js/script.js"></script>
 </body>
 </html>
